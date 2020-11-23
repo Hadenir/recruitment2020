@@ -1,9 +1,3 @@
----
-title: Szkolenie z podstaw programowania w C++
-author: Konrad Brzózka
-date: 27.11.2020
----
-
 # Szkolenie z podstaw programowania C++
 ### *SKA Robotics*
 ### Konrad Brzózka
