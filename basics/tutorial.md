@@ -535,7 +535,7 @@ for(<inicjalizacja>; <warunek>; <aktualizacja>)
 * `<warunek>` - warunek, który określa, jak długo pętla ma się wykonywać. Przed rozpoczęciem każdej operacji jest on sprawdzany - jeśli ma wartość `true` kod w pętli się wykonuje, jeśli `false` program wychodzi z pętli i kontynuuje działanie (np. `i < 100;`);
 * `<aktualizacja>` - wyrażenie, które ma zaktualizować iterator, zwykle korzysta się tutaj z operatora inkrementacji `++`, który zwiększa wartość wybranej zmiennej o 1 (np. `i++`).
 
-Przykładowy program z użyciem pętli `for` (`12-forloop.cpp`):
+Pętlę `for` najczęściej wykorzystujemy, jeśli znamy dokładną ilość powtórzeń, jakie ma wykonać pętla, przed wejściem do niej. Przykładowy program z jej użyciem (`12-forloop.cpp`):
 ```cpp
 #include <iostream>
 
@@ -608,9 +608,18 @@ int main()
     return 0;
 }
 ```
+* `#include <cstdlib>` - dołączamy do naszego programu bibliotekę, dzięki której będziemy mogli generować liczby [pseudolosowe](https://en.wikipedia.org/wiki/Pseudorandom_number_generator);
+* `srand(time(nullptr));` - działanie tej linii wykracza poza zakres naszego szkolenia, po prostu jest ona potrzebna, aby program poprawnie generował losowe liczby;
+* `int random = rand() % 30 + 1;` - funckja `rand()` daje nam losową liczbę, biorąc jej resztę z dzielenia przez 30 i dodając 1, wiemy, że `random` będzie mieć wartość z przedziału `[0; 30]`;
+* Następnie program wczytuje od użytkownika wartość dla zmiennej `guess`;
+* Jeśli użytkownik zgadł wylosowaną liczbę, warunek `guess != random` nie jest spełniony i pętla zostaje całkowicie pominięta. W przeciwnym przypadku wykonywane jest jej wnętrze:
+  * Program wypisuje tekst `"Nah, try gain..."`;
+  * Wczytuje liczbę od użytkownika jeszcze raz;
+  * Po czym sprawdza warunek pętli. Jeśli `guess != random` pętla powtarza się. W przeciwnym przypadku wyskakujemy z pętli.
+* Na koniec program wyświetla wiadomość z gratulacjami i finalizuje działanie.
 
 # Ciąg dalszy nastąpi...
-Dzięki, jeśli wytrwaliście do końca! Od tego momentu zaczniemy nasze piątkowe szkolenie. Będziemy zakładać, że opanowaliście wszystko, co było zawarte w tym tutorialu. Jeśli macie jakieś pytania, piszcie do mnie.
+Dzięki, jeśli wytrwaliście do końca! Od tego momentu zaczniemy nasze piątkowe szkolenie. Będziemy zakładać, że opanowaliście wszystko, co było zawarte w tym tutorialu. Jeśli macie jakieś pytania, piszcie do mnie - bezpośrednio lub na kanale `#soft` na rekrutacyjnym discordzie.
 
 Tematy piątkowego szkolenia:
 * Funkcje
