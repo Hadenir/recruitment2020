@@ -23,10 +23,10 @@ int main()
 Powyższy kod znajduje się w pliku `01-helloworld.cpp`. Opiszmy teraz, co oznaczają kolejne części programu:
 * `#include <iostream>` - dołączenie do naszego kodu nagłówka biblioteki `iostream` pozwalającego na wysyłanie/odbieranie danych z konsoli (więcej o nagłówkach powiemy na drugiej części szkolenia);
 * `int main()` - definicja funkcji `main()`, która jest punktem wejściowym programu, to znaczy, że kod wewnątrz tej funkcji jest wykonywany jako pierwszy przy uruchamianiu programu (więcej o funkcjach na najbliższym szkoleniu);
-* `{`...`}` - po definicji funkcji, w nawiasach klamrowych, podajemy ciało tej funkcji, tj. listę instrukcji które program ma wykonać po jej wywołaniu (kod zawarty w klamrach nazywamy blokiem). Kolejne instrukcje kodu są wykonywane pojedyczno, jedna po drugiej;
+* `{`...`}` - po definicji funkcji, w nawiasach klamrowych, podajemy ciało tej funkcji, tj. listę instrukcji, które program ma wykonać po jej wywołaniu (kod zawarty w klamrach nazywamy blokiem). Kolejne instrukcje kodu są wykonywane pojedyczno, jedna po drugiej;
 * `std::cout` - obiekt reprezentujący standardowy strumień wyjściowy. Używamy go do wysyłania danych, które mają zostać wyświetlone na konsolę;
 * `<< "Hello world!"` - przekazanie tekstu `"Hello world!` do strumienia wyjściowego za pomocą operatora `<<`. W ten sposób możemy wypisywać tekst na konsolę w C++;
-* `<< std::endl` - przekazanie *zakończenia linii* do strumienia wyjściowego, aby wszystko co zostanie wypisane od teraz na konsolę, pojawiało się w kolejnej linii;
+* `<< std::endl` - przekazanie *zakończenia linii* do strumienia wyjściowego, aby wszystko, co zostanie wypisane od teraz na konsolę, pojawiało się w kolejnej linii;
 * `;` - w C++ każda instrukcja kończy się średnikiem. Bezpośrednio po nim może pojawić się kolejna instrukcja, ale dobrą praktyką jest pisanie tylko 1 instrukcji w linii;
 * `return 0;` - zwrócenie z funkcji wartości 0. Jest to informacja dla systemu operacyjnego, że nasz program zakończył się pomyślnie (wartości inne niż 0 oznaczają, że wydarzył się błąd).
 
@@ -39,7 +39,7 @@ Każdy program składa się z podstawowych, koniecznych elementów:
 > *
 -->
 
-Wiemy teraz jak wygląda prosty program w C++, ale jak go uruchomić?
+Wiemy teraz, jak wygląda prosty program w C++, ale jak go uruchomić?
 
 # Kompilacja
 W SKAR pracujemy na Linuxie, dlatego zaprezentuję Wam jak przebiega proces kompilacji w tym środowisku. Wszystkie przykłady na szkoleniu będą kompilowane za pomocą kompilatora GNU GCC, który wywołuje się w następujący sposób:
@@ -109,12 +109,12 @@ Teraz możemy skompilować i uruchomić nasz program:
 ![02-varaibles](images/02-variables.png)
 
 # Typy danych
-W poprzednim przykładnie poznaliśmy jeden z typów danych: `int`. Służy on do przechowywania liczb całkowitych i jest najczęściej stosowanym typem we wszystkich programach. Właściwie w C++ istnieje 5 różnych typów całkowitoliczbowych, a `int` jest jednym z nich. Po co ich aż tyle? Pamięć komputera jest ograniczona, zatem nie da się w niej zapisać liczb o dowolnej wielkości. C++ udostępnia rózne typy danych, które różnią się zakresami liczb jakie są w stanie reprezentować. Niestety standard nie precyzuje jakie to zakresy, a jedynie który typ ma szerszy przedział od poprzedniego. Kolejność (rosnąco) jest następująca: `char`, `short`, `int`, `long` i `long long`. Każdy z tych typów, z wyjątkiem `char`, ma odpowiadający sobie *typ bez znaku*, czyli taki, który pozwala na reprezentowanie jedynie liczb *nieujemnych*: `unsigned short`, `unsigned int`, `unsigned long` oraz `unsigned long long`. Typ `char` jest szczególnym przypadkiem, gdyż występuje w 3 wersjach:
+W poprzednim przykładzie poznaliśmy typ danych `int`. Służy on do przechowywania liczb całkowitych i jest najczęściej stosowanym typem we wszystkich programach. Właściwie w C++ istnieje 5 różnych typów całkowitoliczbowych, a `int` jest jednym z nich. Po co ich aż tyle? Pamięć komputera jest ograniczona, zatem nie da się w niej zapisać liczb o dowolnej wielkości. C++ udostępnia różne typy danych, które różnią się zakresami liczb jakie są w stanie reprezentować i ilością pamięci, którą zajmują. Niestety standard nie precyzuje jakie to zakresy, a jedynie który typ ma mieć szerszy przedział od poprzedniego. Kolejność (rosnąco) jest następująca: `char`, `short`, `int`, `long` i `long long`. Każdy z tych typów, z wyjątkiem `char`, ma odpowiadający sobie *typ bez znaku*, czyli taki, który pozwala na reprezentowanie jedynie liczb *nieujemnych*: `unsigned short`, `unsigned int`, `unsigned long` oraz `unsigned long long`. Typ `char` jest szczególnym przypadkiem, gdyż występuje w 3 wersjach:
 * `char` - służący do reprezentowania pojedynczych znaków, takich jak `'A'`, `'Z'`, `' '`, `'$'` (każdy znak ma przypisany kod z zakresu 0-255);
 * `signed char` - reprezentujący liczby całkowite ze znakiem (-128 do 127);
 * `unsigned char` - reprezentujący liczby całkowite bez znaku (0 do 255).
 
-Poniższa tabela przedstawia rozmiary (w bajtach) i zakresy typów całkowitoliczbowych, które występują obecnie w najpopularniejszych kompilatorach:
+Poniższa tabela przedstawia rozmiary (w bajtach) i zakresy typów całkowitoliczbowych, które występują obecnie w najpopularniejszych kompilatorach (nie należy jednak zakładać bez sprawdzenia, że zgadzają się one z kompilatorem, którego aktualnie używamy):
 Typ danych           | Windows (64-bit) | Rozmiar | Linux (64-bit) | Rozmiar |
 ---------------------|------------------|---------|----------------|---------|
 `signed char`        | -128 -- 127      | 1       | -128 -- 127    | 1       |
@@ -128,9 +128,9 @@ Typ danych           | Windows (64-bit) | Rozmiar | Linux (64-bit) | Rozmiar |
 `long long`          | -2⁶³ -- 2⁶³-1    | 8       | -2⁶³ -- 2⁶³-1  | 8       |
 `unsigned long long` | 0 -- 2⁶⁴-1       | 8       | 0 -- 2⁶⁴-1     | 8       |
 
-Zwróćcie uwagę na przypadek typu `long` (i `unsigned long`), którego rozmiar nie pokrywa się pomiedzy Linuxem i Windowsem!
+Zwróćcie uwagę na przypadek typu `long` (i `unsigned long`), którego rozmiar nie pokrywa się pomiędzy Linuxem i Windowsem! Oznacza to, że ten sam kod skompilowany na dwóch systemach operacyjnych znacząco będzie się od siebie różnił.
 
-Oprócz typów całkowitoliczbowych C++ oferuje też 2 typy zmiennoprzecinkowe, pozwalające na zapisywanie liczb rzeczywistych: `float` oraz `double`. Ich działanie wykracza poza zakres naszego szkolenia, jeśli ktoś chce może więcej poczytać [tutaj](https://en.wikipedia.org/wiki/Floating-point_arithmetic#Floating-point_numbers). Jak sama nazwa wskazuje typ `double` jest dwa razy dokładniejszy niż typ `float`, mimo to w większości przypadków `float` zapewnia wystarczającą precyzję. Typy zmiennoprzecinkowe nie posiadają odpowiedników *bez znaku*!
+Oprócz typów całkowitoliczbowych C++ oferuje też 2 typy zmiennoprzecinkowe, pozwalające na zapisywanie liczb rzeczywistych: `float` oraz `double`. Ich wewnętrzne działanie wykracza poza zakres naszego szkolenia, jeśli ktoś chce może więcej poczytać [tutaj](https://en.wikipedia.org/wiki/Floating-point_arithmetic#Floating-point_numbers). Jak sama nazwa wskazuje typ `double` jest dwa razy dokładniejszy niż typ `float`, mimo to w większości przypadków `float` zapewnia wystarczającą precyzję. Typy zmiennoprzecinkowe nie posiadają odpowiedników *bez znaku*! W zapisie dziesiętnym stosujemy kropkę (`.`) zamiast przecinka (`,`), np. `3.14`.
 
 Przykład `03-datatypes.cpp`:
 ```cpp
@@ -189,14 +189,14 @@ int main()
 * `#include <string>` - dołącza bibliotekę, która definiuje nowy typ danych: `std::string`, pozwalający reprezentować ciągi znaków;
 * `std::cout << "What's your name? ";` - to już znamy;
 * `std::string name;` - tworzymy zmienną `name` typu `std::string`;
-* `std::cin >> name;` - wczytujemy do zmiennej `name` dane ze strumienia wejściowego. W tym momencie program zatrzyma się, oczekując aż użytkownik wpisze coś w konsoli;
-* Analogicznie wczytujemy dane do zmiennej `age`;
-* `std::cout << "Hello, " << name << " (" << age << ")!" << std::endl;` - na koniec program wypisuje wiadomość, skonstruowane z użyciem podanych informacji.
+* `std::cin >> name;` - wczytujemy do zmiennej `name` dane ze strumienia wejściowego. W tym momencie program zatrzyma się, oczekując, aż użytkownik wpisze coś w konsoli;
+* Analogicznie wczytujemy dane do zmiennej `age` typu `unsigned int`;
+* `std::cout << "Hello, " << name << " (" << age << ")!" << std::endl;` - na koniec program wypisuje wiadomość, skonstruowaną z podanych informacji.
 
 Zwróćcie uwagę na kierunek operatorów `<<` i `>>` przy strumieniach! Uruchomienie programu może wyglądać tak:
 ![04-inputoutput](images/04-inputoutput.png)
 
-Na początku tutoriala jest link do skompilowanych przykładow, jesli ktoś chce się sam pobawić.
+Na początku tutoriala jest link do skompilowanych przykładów, jeśli ktoś chce się sam pobawić.
 
 # Operacje arytmetyczne
 Wiemy już jak wyświetlać, wczytywać i przechowywać dane w C++. Teraz pokażemy, jak wykonywać na nich operacje arytmetyczne.
@@ -248,18 +248,18 @@ C++ oferuje wszystkie podstawowe operacje arytmetyczne:
 * `+` - dodawanie;
 * `-` - odejmowanie;
 * `*` - mnożenie;
-* `/` - dzielenie (UWAGA: Jeśli dzielimy liczby całkowite wykonywane jest tzw. dzielenie całkowite, czyli w wyniku pomijana jest część ułamkowa);
+* `/` - dzielenie (UWAGA: Jeśli dzielimy liczby całkowite, wykonywane jest tzw. dzielenie całkowite, czyli w wyniku pomijana jest część ułamkowa);
 * `%` - obliczanie reszty z dzielenia (tylko dla typów całkowitoliczbowych).
 
-Zachowana jest kolejność wykonywania działań, jeśli chcemy narzucić inną używamy nawiasów `(`...`)`. Zwróćcie uwagę, że do zmiennych, oprócz wartości wprost (np. `int a = 2;`), można przypisywać wartości będące wynikiem operacji np. `int a = 1 + 1;` lub `int sum = a + b;`.
+Zachowana jest kolejność wykonywania działań, jeśli chcemy narzucić inną używamy nawiasów `(`...`)`. Do zmiennych, oprócz wartości wprost (np. `int a = 2;`), można przypisywać wartości będące wynikiem operacji np. `int a = 1 + 1;` lub `int sum = a + b;`.
 
 Przykładowe uruchomienie programu:
 ![05-operators](images/05-operators.png)
 
 # Typ logiczny
-Oprócz typów liczbowych (całkowitych i zmiennoprzecinkowych) w C++ mamy też typ logiczny `bool`. Zmienne tego typu mogą przyjmować jedną spośród tylko 2 wartości: `true` albo `false`. Co wiecej, mamy do dyspozycji 3 operacje, które można na nich wykonywać:
+Oprócz typów liczbowych (całkowitych i zmiennoprzecinkowych) w C++ mamy też typ logiczny `bool`. Zmienne tego typu mogą przyjmować jedną spośród tylko 2 wartości: `true` albo `false`. Co więcej, mamy do dyspozycji 3 operacje, które można na nich wykonywać:
 * `!` - negacja (zmiana `false` na `true`, lub `true` na `false`);
-* `&&` - koniukcja (logiczny *and*)
+* `&&` - koniunkcja (logiczny *and*)
 * `||` - alternatywa (logiczny *or*)
 
 Ich zastosowanie przedstawia przykład z pliku `07-logic.cpp`:
@@ -286,7 +286,7 @@ int main()
 ```
 Uwaga:
 * Wartości typu `bool` można wczytywać bezpośrednio z konsoli, wtedy 1 oznacza `true`, a 0 oznacza `false`;
-* `!var_c` - nie zmienia wartosci zmiennej `var_c` (można to zrobić tak: `var_c = !var_c;`).
+* `!var_c` - operator negacji nie zmienia wartości samej zmiennej (można to zrobić tak: `var_c = !var_c;`).
 
 Przykładowe uruchomienie programu:
 ![07-logic](images/07-logic.png)
@@ -325,13 +325,16 @@ int main()
 }
 ```
 Uwaga:
-* `std::cin >> a >> b;` - jeśli chcemy wczytać kilka wartości ze standardowego wejscia możemy zrobić to jedną instrukcją.
+* `std::cin >> a >> b;` - jeśli chcemy wczytać kilka wartości ze standardowego wejścia, możemy zrobić to jedną instrukcją.
 
 Przykładowe uruchomienie programu:
 ![08-logic](images/08-logic.png)
 
 # Instrukcje warunkowe
-Do tej pory wszystkie nasze przykładowe programy działały zawsze tak samo, bez względu na to jakie dane zostały wprowadzone przez użytkownika (zmieniały się tylko wartości zmiennych, ale zawsze był wykonywany ten sam kod). Instrukcje warunkowe pozwalają programowi na wykonywanie fragmentów kodu w zależności od pewnych warunków. Pierwszą instrukcją warunkową jaką poznamy jest instrukcja `if`:
+Do tej pory wszystkie nasze przykładowe programy działały zawsze tak samo, bez względu na to, jakie dane zostały wprowadzone przez użytkownika (zmieniały się tylko wartości zmiennych, ale zawsze był wykonywany ten sam kod). Instrukcje warunkowe pozwalają programowi na wykonywanie fragmentów kodu w zależności od pewnych warunków.
+
+## Instrukcja `if`
+Pierwszą instrukcją warunkową, jaką poznamy, jest instrukcja `if`:
 ```cpp
 if(<warunek>)
 {
@@ -339,7 +342,7 @@ if(<warunek>)
 }
 ```
 * Instrukcja `if` przyjmuje w nawiasach warunek - wartość typu `bool` (zmienną albo wyrażenie np. porównanie);
-* Jeśli wartośc w nawiasie jest równa `true` kod w nawiasach klamrowych za `if` zostanie wykonany;
+* Jeśli wartość w nawiasie jest równa `true` kod w nawiasach klamrowych za `if` zostanie wykonany;
 * W przeciwnym wypadku cały blok zostaje pominięty.
 
 ```cpp
@@ -384,6 +387,7 @@ int main()
 Przykładowe uruchomienie programu:
 ![09-conditionals](images/09-conditionals.png)
 
+## Instrukcja `else-if`
 Istnieje jeszcze jedna wersja instrukcji `if`, którą przedstawia następujący przykład (`10-conditionals.cpp`):
 ```cpp
 #include <iostream>
@@ -417,12 +421,13 @@ int main()
 }
 ```
 
-W tym przypadku program najpierw sprawdzi, czy `number % 2 == 0` (czy liczba jest parzysta). Jeśli tak, to wykona pierwszy blok kodu i pominie pozostałe. W przeciwnym przypadku sprawdzony zostanie drugi warunek `number % 3 == 0` (czy liczba jest podzielna przez 3). Analogicznie, jeśli to prawda zostanie wykonany drugi blok kodu, a pozostałe zostaną pominięte. Jeśli żaden z warunków nie zostanie spełniony (czyli liczba jest nieparzysta, niepodzielna przez 3 i rózna od 1337 i -1) wykonany zostanie kod z bloku `else`.
+W tym przypadku program najpierw sprawdzi, czy `number % 2 == 0` (czy liczba jest parzysta). Jeśli tak, to wykona pierwszy blok kodu i pominie pozostałe. W przeciwnym przypadku sprawdzony zostanie drugi warunek `number % 3 == 0` (czy liczba jest podzielna przez 3). Analogicznie, jeśli to prawda zostanie wykonany drugi blok kodu, a pozostałe zostaną pominięte. I tak dalej... Jeśli żaden z warunków nie zostanie spełniony (czyli liczba jest nieparzysta, niepodzielna przez 3 i różna od 1337 i -1) wykonany zostanie kod z bloku `else`.
 
 Przykładowe uruchomienie programu:
 ![10-conditionals](images/10-conditionals.png)
 
-Poza `if` C++ oferuje jeszcze jedną instrukcję warunkową: `switch`. Rozważmy następujący kod:
+## Instrukcja `switch`
+Poza `if` C++ oferuje drugą instrukcję warunkową: `switch`. Rozważmy następujący kod:
 ```cpp
 #include <iostream>
 
@@ -453,7 +458,7 @@ int main()
     return 0;
 }
 ```
-Program wykorzystuje ciąg instrukcji `if-else` aby sprawdzić wszystkie możliwe wartości zmiennej `option`. Instrukcja `switch` pozwala nam napisać równoważny program w bardziej zwęzły sposób (`11-switch.cpp`):
+Program wykorzystuje ciąg instrukcji `else-if` aby sprawdzić wszystkie możliwe wartości zmiennej `option`. Instrukcja `switch` pozwala nam napisać równoważny program w bardziej zwięzły sposób (`11-switch.cpp`):
 ```cpp
 #include <iostream>
 
@@ -484,10 +489,11 @@ int main()
 ```
 Uwagi:
 * `switch` możemy używać wyłącznie, gdy chcemy porównać wartość jednej zmiennej do jakiegoś zestawu przypadków;
-* Intrukcja `break;` na końcu każdego przypadku jest bardzo istotna. Bez niej program zacznie wykonywac kod przypadków które znajdują się poniżej, zamiast je pominąć;
-* Przypadek `default` działa analogicznie jak `else` w przypadku instrkucji `if` - kod jest wykonywany, gdy zmienna nie pasuje do wszystkich pozostałych `case`'ów;
+* Instrukcja `break;` na końcu każdego przypadku jest bardzo istotna. Bez niej program zacznie wykonywać kod przypadków, które znajdują się poniżej, zamiast je pominąć;
+* Przypadek `default` działa analogicznie jak `else` w przypadku instrukcji `if` - kod jest wykonywany, gdy zmienna nie pasuje do wszystkich pozostałych `case`'ów;
 * Użycie `return 1;` ma sens, gdyż program z założenia obsługuje tylko opcje 0-2, więc jeśli użytkownik poda liczbę spoza tego zakresu, program nie zadziałał pomyślnie i warto o tym poinformować;
-* W tym przypadku nie potrzebujemy intrukcji `break;` w przypadku `deafault`, ponieważ `return 1;` natychmiast kończy działanie programu.
+* W tym przypadku nie potrzebujemy instrukcji `break;` w przypadku `deafault`, ponieważ `return 1;` natychmiast kończy działanie programu;
+* Wyrażenia `switch` są sprytnie optymalizowane przez kompilator, więc są bardziej wydajne niż ciągi instrukcji `else-if`.
 
 Ogólna składnia instrukcji `switch`:
 ```cpp
@@ -515,7 +521,7 @@ Przykładowe uruchomienie programu:
 ![12-switch](images/11-switch.png)
 
 # Pętle
-Wyobraźmy sobie sytuację, w której chcemy wypisać 1000 razy "Wszystkiego najlepszego" na konsolę. Kopiowanie linijku kodu 1000 razy nie wydaje się być dobrym pomysłem, aby to osiągnąć. Ostatnim tematem tego tutoriala są pętle. W językach programowania służą one do wykonywania pewnych fragmentów kodu wielokrotnie.
+Wyobraźmy sobie sytuację, w której chcemy wypisać 1000 razy "Wszystkiego najlepszego" na konsolę. Kopiowanie linijki kodu 1000 razy nie wydaje się być dobrym pomysłem, aby to osiągnąć. Ostatnim tematem tego tutoriala są pętle. W językach programowania służą one do wykonywania pewnych fragmentów kodu wielokrotnie.
 
 ## Pętla `for`
 Podstawową pętlą w C++ jest pętla `for`, której składnia wygląda tak:
@@ -525,8 +531,8 @@ for(<inicjalizacja>; <warunek>; <aktualizacja>)
     ...
 }
 ```
-* `<inicjalizacja>` - najczęściej jest to inicjalizacja iteratora, czyli zmiennej uzywanej w petli (np. liczacej ilość powtórzeń pętli `int i = 0;`);
-* `<warunek>` - warunek, który określa jak długo pętla ma się wykonywać. Przed rozpoczęciem każdej operacji jest on sprawdzany - jeśli ma wartość `true` kod w pętli się wykonuje, jeśli `false` program wychodzi z pętli i kontynuuje działanie (np. `i < 100;`);
+* `<inicjalizacja>` - najczęściej jest to inicjalizacja iteratora, czyli zmiennej używanej w pętli (np. liczącej ilość powtórzeń pętli `int i = 0;`);
+* `<warunek>` - warunek, który określa, jak długo pętla ma się wykonywać. Przed rozpoczęciem każdej operacji jest on sprawdzany - jeśli ma wartość `true` kod w pętli się wykonuje, jeśli `false` program wychodzi z pętli i kontynuuje działanie (np. `i < 100;`);
 * `<aktualizacja>` - wyrażenie, które ma zaktualizować iterator, zwykle korzysta się tutaj z operatora inkrementacji `++`, który zwiększa wartość wybranej zmiennej o 1 (np. `i++`).
 
 Przykładowy program z użyciem pętli `for` (`12-forloop.cpp`):
@@ -556,7 +562,7 @@ int main()
   * Inicjalizowany jest iterator `i = 0`;
   * Dopóki `i < n` pętla będzie się powtarzać i wypisywać na konsolę powitanie;
   * Po każdym powtórzeniu (iteracji) wartość iteratora `i` jest zwiększana o 1;
-* Gdy zmienna `i` osiągnie watość równą `n`, warunek `i < n` przestanie być prawdziwy i pętla nie będzie się więcej powtarzać, zatem kod w niej zawarty powtórzy się `n` razy.
+* Gdy zmienna `i` osiągnie wartość równą `n`, warunek `i < n` przestanie być prawdziwy i pętla nie będzie się więcej powtarzać, zatem kod w niej zawarty powtórzy się `n` razy.
 
 Czasami przydaje się, by iterator malał, zamiast rosnąć z każdą iteracją pętli, można to zrealizować w następujący sposób (operator `--` zmniejsza zmienną o 1):
 ```cpp
@@ -577,7 +583,7 @@ while(<warunek>)
     ...
 }
 ```
-Analogicznie do `for`, kod w pętli `while` powtarza się, dopóki `<warunek>` ma wartośc `true`, jednakże nie posiada miejsca na inicjalizację i aktualizację iteratora - i dobrze, nie jest on nam zawsze potrzebny. Pętlę `while` najczęściej wykorzystujemy, jeśli z góry nie wiemy ile razy pętla będzie miała się powtórzyć (ale znamy warunek zakończenia). Zastosowanie tej pętli pokazane jest w przykładzie z pliku `13-whileloop.cpp`:
+Analogicznie do `for`, kod w pętli `while` powtarza się, dopóki `<warunek>` ma wartość `true`, jednakże nie posiada miejsca na inicjalizację i aktualizację iteratora - i dobrze, nie jest on nam zawsze potrzebny. Pętlę `while` najczęściej wykorzystujemy, jeśli z góry nie wiemy, ile razy pętla będzie miała się powtórzyć (ale znamy warunek zakończenia). Zastosowanie tej pętli pokazane jest w przykładzie z pliku `13-whileloop.cpp`:
 ```cpp
 #include <iostream>
 #include <cstdlib>
@@ -604,7 +610,7 @@ int main()
 ```
 
 # Ciąg dalszy nastąpi...
-Dzięki, jeśli wytrwaliście do końca! Od tego momentu zaczniemy nasze piątkowe szkolenie. Będziemy zakładać, że opanowaliście wszystko co było zawarte w tym tutorialu. Jeśli macie jakieś pytania, piszcie do mnie.
+Dzięki, jeśli wytrwaliście do końca! Od tego momentu zaczniemy nasze piątkowe szkolenie. Będziemy zakładać, że opanowaliście wszystko, co było zawarte w tym tutorialu. Jeśli macie jakieś pytania, piszcie do mnie.
 
 Tematy piątkowego szkolenia:
 * Funkcje
