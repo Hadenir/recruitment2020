@@ -149,8 +149,8 @@ int main()
     long var_l = -2123456789;
     unsigned long var_ul = 4294967296;
 
-    long long var_ll = 9223372036854775808;
-    unsigned long long var_ull = 18446744073709551616;
+    long long var_ll = 9223372036854775807;
+    unsigned long long var_ull = 18446744073709551615;
 
     signed char var_sch = -127;
     unsigned char car_uch = 255;
