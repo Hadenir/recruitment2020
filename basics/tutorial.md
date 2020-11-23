@@ -2,6 +2,9 @@
 ### *SKA Robotics*
 ### Konrad Brzózka
 
+<img src="https://ska.pw.edu.pl/wp-content/uploads/2020/02/cropped-SKA_sygnet-1.png" alt="ska-logo" width=150 />
+<img src="https://ska.pw.edu.pl/wp-content/uploads/2015/10/12516155_905602552889434_894504550_n-600x600.jpg" alt="ska-logo" width=150 />
+
 # Wstęp
 W najbliższy piątek, tj. **27.11.2020 o 18:00**, widzimy się na szkoleniu z programowania w C++. Zakładamy, że jest to Wasze pierwsze spotkanie z jakimkolwiek językiem programowania, dlatego zaczniemy od samych podstaw. Ten tutorial ma na celu zapoznanie Was z częścią najprostszych zagadnień, aby na wykładzie móc skupić się na bardziej złożonych rzeczach. Jeśli ktoś już trochę programował w C++, to nie znajdzie tutaj nic ciekawego dla siebie. Kod wszystkich przykładów jest dostępny na GitHubie, skompilowane programy do samodzielnego przetestowania możecie ściągnąć [tutaj](). Jeśli macie jakiekolwiek pytania, śmiało piszcie do mnie, najłatwiej złapać mnie na discordzie ;)
 
