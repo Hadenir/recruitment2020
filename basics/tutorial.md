@@ -31,7 +31,7 @@ Powyższy kod znajduje się w pliku `01-helloworld.cpp`. Opiszmy teraz, co oznac
 * `return 0;` - zwrócenie z funkcji wartości 0. Jest to informacja dla systemu operacyjnego, że nasz program zakończył się pomyślnie (wartości inne niż 0 oznaczają, że wydarzył się błąd).
 
 Podsumowując, program rozpoczyna swoje działanie w funkcji `main()`, po czym przekazuje do konsoli tekst `"Hello world!"` oraz informację o końcu linii. Następnie finalizuje swoje działanie sygnalizując pomyślne zakończenie.
-<!---
+<!--
 Jeśli ktoś nie rozumie dokładnie jak to działa, może pomóc sobie następującą analogią:
 > O dowolnym programie możemy myśleć jak o rozmowie z komputerem, który nie jest niestety szczególnie bystrym rozmówcą, ale za to ma dobrą pamięć i szybko liczy oraz zwykle nas słucha (jest trochę jak stereotypowy mężczyzna i słabo idzie mu domyślanie się, o co nam chodziło 😅) Więc komunikaty dla niego muszą być jasne i bezbłędne.
 Każdy program składa się z podstawowych, koniecznych elementów:
@@ -64,6 +64,8 @@ Programy komputerowe oprócz wykonywania poleceń muszą też operować na pewny
 ```cpp
 <typ> <nazwa_zmiennej>;
 ```
+* `<typ>` - to typ wartości, jakie może przyjmować zmienna (więcej o typach danych wkrótce);
+* `<nazwa_zmiennej>` - dowolna nazwa, zaczynająca się literą alfabetu lub znakiem `_`, może zawierać cyfry.
 
 Omówmy przykład z pliku `02-variables.cpp`:
 ```cpp
