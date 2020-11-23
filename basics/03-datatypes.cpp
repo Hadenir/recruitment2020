@@ -8,7 +8,7 @@ int main()
     unsigned short var_ush = 65535;
 
     int var_i = 100;
-    unsigned int var_i = 1500000;
+    unsigned int var_ui = 1500000;
 
     long var_l = -2123456789;
     unsigned long var_ul = 4294967296;
