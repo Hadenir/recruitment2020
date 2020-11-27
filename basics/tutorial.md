@@ -610,7 +610,7 @@ int main()
 ```
 * `#include <cstdlib>` - dołączamy do naszego programu bibliotekę, dzięki której będziemy mogli generować liczby [pseudolosowe](https://en.wikipedia.org/wiki/Pseudorandom_number_generator);
 * `srand(time(nullptr));` - działanie tej linii wykracza poza zakres naszego szkolenia, po prostu jest ona potrzebna, aby program poprawnie generował losowe liczby;
-* `int random = rand() % 30 + 1;` - funckja `rand()` daje nam losową liczbę, biorąc jej resztę z dzielenia przez 30 i dodając 1, wiemy, że `random` będzie mieć wartość z przedziału `[0; 30]`;
+* `int random = rand() % 30 + 1;` - funkcja `rand()` daje nam losową liczbę, biorąc jej resztę z dzielenia przez 30 i dodając 1, wiemy, że `random` będzie mieć wartość z przedziału `[0; 30]`;
 * Następnie program wczytuje od użytkownika wartość dla zmiennej `guess`;
 * Jeśli użytkownik zgadł wylosowaną liczbę, warunek `guess != random` nie jest spełniony i pętla zostaje całkowicie pominięta. W przeciwnym przypadku wykonywane jest jej wnętrze:
   * Program wypisuje tekst `"Nah, try gain..."`;
