@@ -39,7 +39,7 @@ public:
     virtual float distance() const = 0;
 
     // Funckja wypisuje na standardowe wyjscie informacje o laziku w formacie:
-    // <nazwa>(<predkosc>,<przejechany_dystanst>)
+    // <nazwa>(<stan>,<predkosc>,<przejechany_dystanst>)
     virtual void print() const = 0;
 
 protected:
